@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Popular Movies</string>
+    <string name="image_view_description">Image of The Poster</string>
+    <string name="action_sortby_popularity">Sort by: Most Popular</string>
+    <string name="action_sortby_rating">Sort by: Top Rate </string>
+    <string name="already_sorted">The Grid is already sorted by the selected parameter.</string>
+    <string name="invalid_json_string">The JSON String passed in is invalid.</string>
+    <string name="invalid_url">The URL parameter is invalid</string>
+    <string name="unable_to_connect">Unable to connect to the server!</string>
+    <string name="no_network_available">No Network Available</string>
+    <string name="unexpected_error">An unexpected error occured</string>
+</resources>
