@@ -1,27 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+<RelativeLayout
     android:id="@+id/activity_detail"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.percival.dominic.popularmovies.DetailActivity">
 
-    <WebView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/wv_summary"
-        android:layout_above="@+id/rb_movie_rating"
-        style="@style/TextAppearance.AppCompat.Caption"
-        tools:text="Smaple Test that is to be displayed." />
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:scaleType="centerCrop"
-        android:layout_above="@+id/wv_summary"
-        android:id="@+id/iv_poster"
-        android:contentDescription="@string/image_view_description"
-        />
+        android:orientation="vertical"
+        android:layout_below="@+id/tv_movie_releasedate"
+        android:id="@+id/ll_imagedesc">
+
+        <ImageView
+            android:id="@+id/iv_poster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_view_description" />
+
+            <WebView
+                android:id="@+id/wv_summary"
+                style="@style/TextAppearance.AppCompat.Caption"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Smaple Test that is to be displayed." />
+    </LinearLayout>
+
     <RatingBar
         android:id="@+id/rb_movie_rating"
         android:layout_width="wrap_content"
@@ -31,25 +41,26 @@
         android:isIndicator="true"
         android:max="5"
         tools:rating="3.111"
-        />
+        android:layout_below="@id/ll_imagedesc"/>
+
     <TextView
         android:id="@+id/tv_movie_title"
         style="@style/TextAppearance.AppCompat.Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="8dp"
-        android:textSize="34sp"
-        android:textStyle="bold"
-        tools:text="Title"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         android:shadowColor="@android:color/white"
         android:shadowDx="5"
         android:shadowDy="5"
-        android:shadowRadius="5"/>
+        android:shadowRadius="5"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        tools:text="Title" />
 
     <TextView
         android:id="@+id/tv_movie_releasedate"
@@ -57,16 +68,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_movie_title"
-        tools:text="Date"
-        android:layout_marginTop="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="8dp"
         android:layout_marginLeft="8dp"
-        android:textSize="22sp"
-        android:textStyle="bold"
-        android:textColor="@android:color/darker_gray"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
         android:shadowColor="@android:color/white"
         android:shadowDx="5"
         android:shadowDy="5"
-        android:shadowRadius="5"/>
+        android:shadowRadius="5"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        tools:text="Date" />
 </RelativeLayout>
+</ScrollView>
